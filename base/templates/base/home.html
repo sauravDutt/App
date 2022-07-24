@@ -6,11 +6,11 @@
 
 <div>
     <div>
-        {% for room in rooms %}
+        {% for post in posts %}
 
         <div>
             <h5>
-                {{room.id}} -- <a href="{% url 'room' room.id %}" title="target="_blank>{{room.name}} </a>
+                {{post.id}} -- <a href="{% url 'post' post.id %}" title="target="_blank>{{post.name}} </a>
             </h5>
         </div>
 

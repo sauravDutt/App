@@ -3,7 +3,7 @@ from django.shortcuts import render
 
 # Create your views here.
 
-rooms = [
+posts = [
     {'id': 1, 'name': 'Lets learn Python!'},
     {'id': 2, 'name': 'Design with me'},
     {'id': 3, 'name': 'Front End Developers'},
@@ -11,15 +11,15 @@ rooms = [
 
 
 def home(request):
-    context = {'rooms': rooms}
+    context = {'posts': posts}
     return render(request, 'base/home.html', context)
 
 
-def room(request, pk):
+def post(request, pk):
     room = None
-    for i in rooms:
+    for i in posts:
         if i['id'] == int(pk):
             room = i
     
     context = {'room': room}
-    return render(request, 'base/room.html', context)
+    return render(request, 'base/post.html', context)
