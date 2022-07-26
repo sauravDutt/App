@@ -1,3 +1,4 @@
+from turtle import title
 from unicodedata import name
 from django.db import models
 from django.contrib.auth.models import User
@@ -17,7 +18,7 @@ class Topic(models.Model):
 class Post(models.Model):
     host = models.ForeignKey(User, on_delete=models.SET_NULL, null=True, blank=True)
     topic = models.ForeignKey(Topic, on_delete=models.SET_NULL, null=True, blank=True)
-    name = models.CharField(max_length=255)
+    title = models.CharField(max_length=255)
     description = models.TextField(null = True, blank = True)
     # participants = 
     update = models.DateTimeField(auto_now=True)
