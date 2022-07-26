@@ -44,9 +44,9 @@ def updatePost(request, pk):
     return render(request, 'base/post_form.html', context)
 
 def deletePost(request, pk):
-    post = Post.objects.get(id=pk)
-
+    post  = Post.objects.get(id=pk)
     if request.method == 'POST':
         post.delete()
         return redirect('home')
-    return render(request, 'base/delete.html', {'obj': post})
+    
+    return render(request, 'base/delete.html', {"obj": post})
